@@ -21,6 +21,11 @@
   networking.hostName = "crypton"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  networking.interfaces.eno1.ipv4.addresses = [ {
+	address = "10.0.0.254";
+	prefixLength = 24;
+  } ];
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 

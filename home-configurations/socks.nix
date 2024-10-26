@@ -4,6 +4,8 @@
 
   imports = [
    ezModules.base
+   ezModules.nvim
+   ezModules.bash
   ];
 
   home = {
