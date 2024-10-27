@@ -10,7 +10,9 @@
     };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-    ez-configs.url = "github:ehllie/ez-configs";
+
+    # https://github.com/ehllie/ez-configs/pull/12
+    ez-configs.url = "github:ehllie/ez-configs/user-home-modules";
   };
 
   outputs = { self, flake-parts, ... }@inputs: flake-parts.lib.mkFlake { inherit inputs; } {
@@ -23,8 +25,14 @@
     ezConfigs = {
       root = ./.;
       globalArgs = { inherit inputs; };
+      home.users = {
+        "socks".nameFunction = (_: "socks");
+	"socks@crypton".nameFunction = (_: "socks@crypton");
+        "socks@rin".nameFunction = (_: "socks@rin");
+      };
       nixos.hosts = {
-       crypton.userHomeModules = [ "socks" ];
+       crypton.userHomeModules = { socks = "socks@crypton"; };
+       rin.userHomeModules = { socks = "socks@rin"; };
       };
     };
   };

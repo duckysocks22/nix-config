@@ -10,4 +10,6 @@
       keep-outputs = true;
     };
   };
+
+  nixpkgs.config = { allowUnfree = true; };
 }
