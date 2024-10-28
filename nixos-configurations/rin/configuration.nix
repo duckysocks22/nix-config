@@ -25,9 +25,6 @@
   };
 
   networking.hostName = "rin"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  services.tailscale.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";

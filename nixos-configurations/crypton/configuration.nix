@@ -19,12 +19,9 @@
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "crypton"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  networking.interfaces.eno1.ipv4.addresses = [ {
-	address = "10.0.0.254";
-	prefixLength = 24;
-  } ];
+  networking.networkmanager.enable = false;
+  networking.useNetworkd = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -92,8 +89,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  services.tailscale.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

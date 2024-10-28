@@ -36,13 +36,21 @@
 				browseable = "yes";
 				"read only" = "no";
 
+				# Make this public
+				"guest ok" = "yes";
+				"valid users" = "socks";
+			};
+			Private = {
+				path = "/home/socks/files/shares/private";
+				browseable = "yes";
+				"read only" = "no";
+
 				# Make this private
 				"guest ok" = "no";
 				"valid users" = "socks";
-			};
+				};
 			};
 	};
-
 	services.samba-wsdd = {
 		enable = true;
 		openFirewall = true;
