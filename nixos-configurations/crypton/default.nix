@@ -9,5 +9,6 @@
     ezModules.proxmox
     ezModules.network
     ezModules.jellyfin
+    ezModules.docker
   ];
 }

@@ -3,7 +3,6 @@
 		enable = true;
 		securityType = "user";
 		extraConfig = ''
-			workgroup = WORKGROUP
 			server role = standalone server
 			
 			map to guest = bad user
@@ -14,7 +13,7 @@
 			follow symlinks = yes
 			load printers = no
 			printing = bsd
-			pritncap name = /dev/null
+			printcap name = /dev/null
 			disable spoolss = yes
 			strict locking = no
 			aio read size = 0
@@ -25,23 +24,23 @@
 			client ipc max protocol = SMB3
 			client ipc min protocol = SMB2_10
 			client max protocol = SMB3
-			client max probotcol = SMB2_10
+			client max protocol = SMB2_10
 			server max protocol = SMB3
 			server min protocol = SMB2_10
 			'';
 
 			shares = {
 			Shared_Files = {
-				path = "/home/socks/files/shares/main";
+				path = "/data/shares/shared_files";
 				browseable = "yes";
 				"read only" = "no";
 
-				# Make this public
-				"guest ok" = "yes";
-				"valid users" = "socks";
+				# Set Users
+				"guest ok" = "no";
+				"valid users" = "socks stev zia";
 			};
 			Private = {
-				path = "/home/socks/files/shares/private";
+				path = "/data/shares/private";
 				browseable = "yes";
 				"read only" = "no";
 
