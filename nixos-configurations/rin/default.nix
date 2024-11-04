@@ -10,5 +10,6 @@
     ezModules.vesktop
     ezModules.browsers
     ezModules.qbittorrent
+    ezModules.libreoffice
   ];
 }
