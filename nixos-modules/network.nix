@@ -10,5 +10,5 @@
   ];
 
   networking.networkmanager.enable = lib.mkDefault true;
-
+  networking.firewall.checkReversePath = "loose";
 }
