@@ -6,7 +6,7 @@
     ./vmbridge.nix
     ezModules.nix
     ezModules.samba
-    ezModules.proxmox
+   # ezModules.proxmox
     ezModules.network
     ezModules.jellyfin
     ezModules.docker

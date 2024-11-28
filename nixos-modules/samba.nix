@@ -37,7 +37,16 @@
 
 				# Set Users
 				"guest ok" = "no";
-				"valid users" = "socks stev zia";
+				"force group" = "share";
+			};
+			Jellyfin = {
+				path = "/data/shares/Jellyfin";
+				browseable = "yes";
+				"read only" = "no";
+
+				#Set Users
+				"guest ok" = "no";
+				"force group" = "share";
 			};
 			Private = {
 				path = "/data/shares/private";
@@ -46,7 +55,7 @@
 
 				# Make this private
 				"guest ok" = "no";
-				"valid users" = "socks";
+				"forge group" = "admin";
 				};
 			};
 	};

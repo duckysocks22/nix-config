@@ -64,10 +64,24 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
+  # Define groups
+  users.groups.admin.gid = 1001;
+  users.groups.share.gid = 1000;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."socks" = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "admin" ];
+  };
+
+  users.users."stev" = {
+    isNormalUser = true;
+    extraGroups = [ "share" ];
+  };
+
+  users.users."zia" = {
+    isNormalUser = true;
+    extraGroups = [ "share" ];
   };
 
   # List packages installed in system profile. To search, run:
