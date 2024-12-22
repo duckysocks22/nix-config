@@ -13,5 +13,6 @@
     ezModules.qbittorrent-nox
     ezModules.docker-compose
     ezModules.ftp
+    ezModules.btop
   ];
 }
