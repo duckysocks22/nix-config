@@ -10,5 +10,8 @@
     ezModules.network
     ezModules.jellyfin
     ezModules.docker
+    ezModules.qbittorrent-nox
+    ezModules.docker-compose
+    ezModules.ftp
   ];
 }

@@ -9,6 +9,8 @@
     "8.8.8.8"
   ];
 
+  networking.firewall.allowedTCPPorts = [ 8080 ];
+
   networking.networkmanager.enable = lib.mkDefault true;
   networking.firewall.checkReversePath = "loose";
 }
