@@ -1,0 +1,17 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: FABRIC
+      VERSION: 1.20.1
+      FABRIC_VERSION: latest
+      MAX_MEMORY: "24G"
+      MOTD: ":3"
+      DIFFICULTY: "normal"
+    volumes:
+      - /data/docker/prominence-2-rpg/data:/data  

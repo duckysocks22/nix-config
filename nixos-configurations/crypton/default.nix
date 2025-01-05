@@ -10,8 +10,8 @@
     ezModules.network
     ezModules.jellyfin
     ezModules.docker
-    ezModules.qbittorrent-nox
     ezModules.docker-compose
+   # ezModules.qbittorrent-nox
     ezModules.ftp
     ezModules.btop
   ];

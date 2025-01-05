@@ -4,4 +4,5 @@
   environment.systemPackages = [
     pkgs.qbittorrent-nox
   ];
+
 }
