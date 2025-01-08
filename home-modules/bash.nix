@@ -6,6 +6,6 @@
 			bashrcExtra = ''
 			  export EDITOR="${config.home.sessionVariables.EDITOR}"
 			  '';
-		};
+			};
 
 }
