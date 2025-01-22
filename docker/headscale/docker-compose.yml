@@ -1,0 +1,11 @@
+services:
+  headscale:
+    image: headscale/headscale:0.23.0
+    restart: unless-stopped
+    container_name: headscale
+    ports:
+     - "127.0.0.1:8000:8000"
+     - "127.0.0.1:8001:8001"
+    volumes:
+      - /data/docker/headscale/:/etc/headscale
+    command: serve

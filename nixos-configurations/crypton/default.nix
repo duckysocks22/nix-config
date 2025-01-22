@@ -3,7 +3,6 @@
 {
   imports = [
     ./configuration.nix
-    ./vmbridge.nix
     ezModules.nix
     ezModules.samba
     ezModules.jellyfin
@@ -13,5 +12,9 @@
     ezModules.btop
     ezModules.network
     ezModules.cryptonaliases
+    ezModules.headscale
+    ezModules.openssl
+    ezModules.xxd
+    #ezModules.podman
   ];
 }

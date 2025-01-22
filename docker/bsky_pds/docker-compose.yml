@@ -1,0 +1,51 @@
+# AT Proto Personal Data Server for use with BlueSky
+services:
+  pds:
+    container_name: pds
+    # Image is pulled below in build
+    # image: ghcr.io/bluesky-social/pds:0.4
+    build:
+      context: .
+      # Adds pdsadmin utility into image
+      dockerfile_inline: |
+        FROM ghcr.io/bluesky-social/pds:0.4
+        RUN apk add bash curl openssl jq util-linux-misc
+        RUN curl --silent --show-error --fail --output '/usr/local/bin/pdsadmin' 'https://raw.githubusercontent.com/bluesky-social/pds/main/pdsadmin.sh'
+        RUN sed -i 's/--force/-f/g' /usr/local/bin/pdsadmin
+        RUN chmod +x /usr/local/bin/pdsadmin
+    restart: unless-stopped
+    volumes:
+      # Where to store the pds information
+      - /data/docker/pds:/pds
+    ports:
+      # Change the first port to something that doesn't conflict with other services.
+      # port 6000 on the host to port 3000 in the container.
+      - '6000:3000'
+    environment:
+      - LOG_ENABLED=true
+      - PDS_ADMIN_EMAIL=jjones213067@proton.me
+        # openssl rand --hex 16
+      - PDS_ADMIN_PASSWORD=e3c9eff9c579f4eb325cbe84b79a4b63
+      - PDS_BLOBSTORE_DISK_LOCATION=/pds/blocks
+      - PDS_BLOBSTORE_DISK_TMP_LOCATION=/pds/temp
+      - PDS_BLOB_UPLOAD_LIMIT=52428800
+      - PDS_BSKY_APP_VIEW_DID=did:web:api.bsky.app
+      - PDS_BSKY_APP_VIEW_URL=https://api.bsky.app
+      - PDS_CRAWLERS=https://bsky.network
+      - PDS_DATA_DIRECTORY=/pds
+      - PDS_DID_PLC_URL=https://plc.directory
+      # If using Google Workspace this email address must exist (either as a user, or as an alias)
+      - PDS_EMAIL_FROM_ADDRESS=jjones213067@proton.me
+      # Generate an app password for this
+      #- PDS_EMAIL_SMTP_URL=smtps://admin%40example.com:app-password-for@smtp-relay.gmail.com:465/
+      - PDS_EMAIL_SMTP_URL=smtps://resend:re_Sha5SpKz_AyKKMSwQKtdvuB4yg1u1CVX8
+      # PDS hostname can also be the domain, eg: example.com
+      - PDS_HOSTNAME=pds.summonersrift.lol
+      # openssl rand --hex 16
+      - PDS_JWT_SECRET=ce47e76211217cc94f61c56a9e807d7b
+      # openssl ecparam --name secp256k1 --genkey --noout --outform DER | tail --bytes=+8 | head --bytes=32 | xxd --plain --cols 32
+      - PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX=a31c019592300a52ea9a9960fdbb4fd4a453957a3c09c0349b29f2f2710dc45a
+      - PDS_REPORT_SERVICE_DID=did:plc:ar7c4by46qjdydhdevvrndac
+      - PDS_REPORT_SERVICE_URL=https://mod.bsky.app
+      # user handles will be @user.example.com
+      - PDS_SERVICE_HANDLE_DOMAINS=.summonersrift.lol

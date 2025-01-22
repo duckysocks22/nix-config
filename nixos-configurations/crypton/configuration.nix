@@ -21,7 +21,7 @@
   networking.hostName = "crypton"; # Define your hostname.
 
   networking.networkmanager.enable = false;
-  networking.useNetworkd = true;
+  networking.useNetworkd = false;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -82,6 +82,11 @@
   users.users."zia" = {
     isNormalUser = true;
     extraGroups = [ "share" ];
+  };
+
+  users.users."headscale" = {
+    isNormalUser = true;
+    extraGroups = [ "admin" "wheel" ];
   };
 
   # List packages installed in system profile. To search, run:

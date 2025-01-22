@@ -1,0 +1,22 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    environment:
+      EULA: true
+      TYPE: FABRIC
+      VERSION: 1.21.1
+      FABRIC_VERSION: 0.16.9
+      MAX_MEMORY: "16G"
+      MOTD: "Crypton: Stev's Funny Cobblemon"
+      DIFFICULTY: "normal"
+    ports:
+      - "9001:9001"
+      - "9003:9003/udp"
+    volumes:
+      - /data/docker/stevcobblemon:/data
+networks:
+  net_10.0.100.2:
+    driver_opts:
+      com.docker.network.host_ipv4: 10.0.100.2
