@@ -14,6 +14,10 @@
 
     # https://github.com/ehllie/ez-configs/pull/12
     ez-configs.url = "github:ehllie/ez-configs/user-home-modules";
+
+    # Hoyo Games
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-24.05";
+    aagl.inputs.nixpkgs.follows = "nixpkgs"; # Name of nixpkgs input if you want to use
   };
 
   outputs = { self, flake-parts, ... }@inputs: flake-parts.lib.mkFlake { inherit inputs; } {

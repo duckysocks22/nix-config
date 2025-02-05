@@ -11,5 +11,8 @@
     ezModules.browsers
     ezModules.qbittorrent
     ezModules.libreoffice
+    ezModules.mikualiases
+    ezModules.gacha
+    ezModules.cachix
   ];
 }
