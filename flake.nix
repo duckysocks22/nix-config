@@ -6,7 +6,7 @@
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.1";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
