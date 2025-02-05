@@ -2,11 +2,11 @@
   description = "miku is pretty cool i think";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,7 +16,7 @@
     ez-configs.url = "github:ehllie/ez-configs/user-home-modules";
 
     # Hoyo Games
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-24.05";
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix/release-24.11";
     aagl.inputs.nixpkgs.follows = "nixpkgs"; # Name of nixpkgs input if you want to use
   };
 

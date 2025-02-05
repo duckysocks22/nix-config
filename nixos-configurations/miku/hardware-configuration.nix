@@ -26,13 +26,13 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/extra" =
-    { device = "/dev/disk/by-uuid/40c050b4-0056-4162-923a-4b2d74f8bff1";
+  fileSystems."/plus" =
+    { device = "/dev/disk/by-uuid/dbabaf50-0581-4e5a-a790-e8d9598769c2";
       fsType = "ext4";
     };
 
-  fileSystems."/plus" =
-    { device = "/dev/disk/by-uuid/dbabaf50-0581-4e5a-a790-e8d9598769c2";
+  fileSystems."/extra" =
+    { device = "/dev/disk/by-uuid/40c050b4-0056-4162-923a-4b2d74f8bff1";
       fsType = "ext4";
     };
 
@@ -46,6 +46,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp36s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
