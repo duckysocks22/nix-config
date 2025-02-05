@@ -30,10 +30,12 @@
         "socks".nameFunction = (_: "socks");
 	"socks@crypton".nameFunction = (_: "socks@crypton");
         "socks@rin".nameFunction = (_: "socks@rin");
+        "socks@miku".nameFunction = (_: "socks@miku");
       };
       nixos.hosts = {
        crypton.userHomeModules = { socks = "socks@crypton"; };
        rin.userHomeModules = { socks = "socks@rin"; };
+       miku.userHomeModules = { socks = "socks@miku"; };
       };
     };
   };
