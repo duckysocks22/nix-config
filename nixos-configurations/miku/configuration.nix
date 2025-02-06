@@ -17,6 +17,8 @@
   boot.loader.grub.efiSupport = true;
 
   networking.hostName = "miku"; # Define your hostname.
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -37,12 +39,16 @@
   services.xserver.enable = true;
 
   # Enable the Pantheon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.pantheon.enable = true;
 
   # Enable the GNOME Desktop Environment
   #services.xserver.displayManager.lightdm.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable the KDE Plasma 6 Desktop Environment
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

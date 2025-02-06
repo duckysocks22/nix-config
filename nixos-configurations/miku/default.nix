@@ -14,5 +14,6 @@
     ezModules.gacha
     ezModules.cachix
     ezModules.steam
+    ezModules.network
   ];
 }
