@@ -17,7 +17,6 @@
   networking.firewall = {
     enable = true;
     checkReversePath = "loose";
-<<<<<<< HEAD
     allowedTCPPorts = [ 80 8096 8080 13378 25565 9001 8123 ];
     allowedUDPPorts = [ 9003 ];
     # Port List
@@ -26,9 +25,7 @@
     # Audiobookshelf: 13378:80
     # Minecraft: 25565 9001 9003/udp
     # Dynmap: 8123
-=======
     # Port List
->>>>>>> ddb758d711d8e6e11b89c3f9317e26e2f3012981
 
     #allowedUDPPortRanges = [
     #  { from = 9000; to = 9003; }

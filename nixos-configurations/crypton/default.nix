@@ -16,6 +16,6 @@
     ezModules.headscale
     ezModules.openssl
     ezModules.xxd
-    #ezModules.podman
+    ezModules.monero
   ];
 }
