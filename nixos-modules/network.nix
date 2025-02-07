@@ -24,13 +24,14 @@
   networking.firewall = {
     enable = true;
     checkReversePath = "loose";
-    allowedTCPPorts = [ 80 8096 8080 13378 25565 9001 ];
+    allowedTCPPorts = [ 80 8096 8080 13378 25565 9001 8123 ];
     allowedUDPPorts = [ 9003 ];
     # Port List
     # Jellyfin: 8096
     # qBittorrent: 8080
     # Audiobookshelf: 13378:80
     # Minecraft: 25565 9001 9003/udp
+    # Dynmap: 8123
 
     #allowedUDPPortRanges = [
     #  { from = 9000; to = 9003; }
