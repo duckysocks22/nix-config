@@ -41,9 +41,9 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  services.desktopManager.plasma6 = {
-    enable = true;
-  };
+  #services.desktopManager.plasma6 = {
+  #  enable = true;
+  #};
   
 
   # Configure keymap in X11
@@ -137,7 +137,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }
 

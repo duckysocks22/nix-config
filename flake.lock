@@ -1,5 +1,27 @@
 {
   "nodes": {
+    "aagl": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736877544,
+        "narHash": "sha256-MnUAUYzPjqZnD48OOB/uAg2kQPpwnV+rCK39qwbPDoc=",
+        "owner": "ezKEa",
+        "repo": "aagl-gtk-on-nix",
+        "rev": "a01850259d3516ec6ff772dc0dc15cec224d396d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ezKEa",
+        "ref": "release-24.11",
+        "repo": "aagl-gtk-on-nix",
+        "type": "github"
+      }
+    },
     "crane": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -40,6 +62,22 @@
       }
     },
     "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733328505,
+        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-compat_2": {
       "locked": {
         "lastModified": 1696426674,
         "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
@@ -100,16 +138,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1726989464,
-        "narHash": "sha256-Vl+WVTJwutXkimwGprnEtXc/s/s8sMuXzqXaspIGlwM=",
+        "lastModified": 1736373539,
+        "narHash": "sha256-dinzAqCjenWDxuy+MqUQq0I4zUSfaCvN9rzuCmgMZJY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2f23fa308a7c067e52dfcc30a0758f47043ec176",
+        "rev": "bd65bc3cde04c16755955630b344bc9e35272c56",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-24.05",
+        "ref": "release-24.11",
         "repo": "home-manager",
         "type": "github"
       }
@@ -174,16 +212,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1729691686,
-        "narHash": "sha256-BAuPWW+9fa1moZTU+jFh+1cUtmsuF8asgzFwejM4wac=",
+        "lastModified": 1738702386,
+        "narHash": "sha256-nJj8f78AYAxl/zqLiFGXn5Im1qjFKU8yBPKoWEeZN5M=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "32e940c7c420600ef0d1ef396dc63b04ee9cad37",
+        "rev": "030ba1976b7c0e1a67d9716b17308ccdab5b381e",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-24.05",
+        "ref": "nixos-24.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -207,7 +245,7 @@
     "proxmox-nixos": {
       "inputs": {
         "crane": "crane",
-        "flake-compat": "flake-compat",
+        "flake-compat": "flake-compat_2",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "utils": "utils"
@@ -228,6 +266,7 @@
     },
     "root": {
       "inputs": {
+        "aagl": "aagl",
         "ez-configs": "ez-configs",
         "flake-parts": "flake-parts_2",
         "home-manager": "home-manager",

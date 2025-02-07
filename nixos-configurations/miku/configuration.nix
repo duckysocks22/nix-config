@@ -11,20 +11,14 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
+  #boot.loader.grub.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
 
-  # Nvidia Prime
-  hardware.nvidia.prime = {
-  	sync.enable = true;
-
-	intelBusId = "PCI:0:2:0";
-	nvidiaBusId = "PCI:1:0:0";
-  };
-
-  networking.hostName = "rin"; # Define your hostname.
+  networking.hostName = "miku"; # Define your hostname.
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -41,10 +35,20 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  # Enable the X11 windowing system.
+   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;  
+
+  # Enable the Pantheon Desktop Environment.
+  #services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.pantheon.enable = true;
+
+  # Enable the GNOME Desktop Environment
+  #services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable the KDE Plasma 6 Desktop Environment
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
